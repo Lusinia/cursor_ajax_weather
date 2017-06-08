@@ -1,0 +1,23 @@
+{
+  "name": "ajax",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "node-geocoder": "^3.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lusinia/cursor_ajax_weather.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lusinia/cursor_ajax_weather/issues"
+  },
+  "homepage": "https://github.com/Lusinia/cursor_ajax_weather#readme"
+}

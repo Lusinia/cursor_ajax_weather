@@ -1,0 +1,71 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-CD {
+  background-image: url(sprite.png);
+  background-position: 0px -54px;
+  width: 44px;
+  height: 44px;
+}
+.icon-CH {
+  background-image: url(sprite.png);
+  background-position: -44px -54px;
+  width: 44px;
+  height: 44px;
+}
+.icon-CM {
+  background-image: url(sprite.png);
+  background-position: 0px -98px;
+  width: 45px;
+  height: 39px;
+}
+.icon-CR Alt {
+  background-image: url(sprite.png);
+  background-position: -102px -40px;
+  width: 44px;
+  height: 37px;
+}
+.icon-CS {
+  background-image: url(sprite.png);
+  background-position: -102px 0px;
+  width: 44px;
+  height: 40px;
+}
+.icon-CSSA {
+  background-image: url(sprite.png);
+  background-position: 0px 0px;
+  width: 54px;
+  height: 54px;
+}
+.icon-Fog Alt {
+  background-image: url(sprite.png);
+  background-position: -45px -98px;
+  width: 44px;
+  height: 30px;
+}
+.icon-New {
+  background-image: url(sprite.png);
+  background-position: -146px 0px;
+  width: 24px;
+  height: 24px;
+}
+.icon-Sun {
+  background-image: url(sprite.png);
+  background-position: -54px 0px;
+  width: 48px;
+  height: 48px;
+}
+.icon-Wind {
+  background-image: url(sprite.png);
+  background-position: -89px -98px;
+  width: 44px;
+  height: 28px;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/sprite.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Ajax - darksky.net</title>
+</head>
+<body onload="geolocation()" >
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h1>
+                Широта-  <span id="latitude"></span> Довгота-   <span id="longitude"></span>
+            </h1>
+
+        </div>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-xs-12">
+        <div class="jumbotron">
+            <div class="icon"></div>
+             <div class="info">
+                 <div class="city"></div>
+                 <div class="temp"> </div>
+                 <div class="weather"></div>
+             </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="row buttons">
+    <div class="col-xs-3">
+        <button type="button" class="btn btn-warning btn-lg prev"  >Погода вчора</button>
+    </div>
+
+    <div class="col-xs-6">
+        <button   class="btn btn-success btn-lg reset" onClick="geolocation()">Погода зараз вдома</button>
+    </div>
+    <div class="col-xs-3">
+        <button type="button" class="btn btn-warning btn-lg post"  >Погода на завтра</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <form method="get">
+            <fieldset>
+                <ul>
+                    <li>
+                        <label for="city-search">Введіть місто</label>
+                        <input type="text" id="city-search" class="btn btn-default btn-lg" placeholder="e.g. Rochester, NY">
+                    </li>
+                </ul>
+            </fieldset>
+
+            <button class= "btn btn-success btn-lg " id="search-button" >Дізнатись погоду в місті</button>
+        </form>
+    </div>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqmZ8gKJvqP_CebwJht1YuQqsCVzED7ZE&libraries=places,geometry"></script>
+ <script src='./main.js'></script>
+
+</body>
+</html>
+
+
+
