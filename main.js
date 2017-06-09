@@ -31,13 +31,11 @@ function geoSuccess(position) {
     weatherNow(lat, long);
 
     $('.prev')[0].addEventListener("click", function () {
-        console.log(lat, long);
-        getPrevWeather(lat, long);
+         getPrevWeather(lat, long);
     });
     $('.post')[0].addEventListener("click", function () {
         getNextWeather(lat, long);
-        console.log('getnex ', lat, long);
-    });
+     });
     console.log('geoSuccess ', 'lat ', lat, 'long ', long);
 
 }
@@ -63,17 +61,15 @@ function deniedGeolocation() {
             weatherNow(lat, long);
 
             $('.prev')[0].addEventListener("click", function () {
-                console.log(lat, long);
-                getPrevWeather(lat, long);
+                 getPrevWeather(lat, long);
             });
             $('.post')[0].addEventListener("click", function () {
                 getNextWeather(lat, long);
-                console.log('getnex ', lat, long);
-            });
+             });
 
         },
         error: function (xhr) {
-            console.log('autoip - error', xhr.message)
+            console.error('autoip - error', xhr.message)
         }
     });
 }
@@ -96,9 +92,6 @@ function reverseGeolocation(lat, long) {
             cityName = data.results[3].formatted_address;
             city.innerText = cityName;
 
-            console.log('cityName ', cityName);
-            console.log('lat, long ', lat, long);
-            console.log('reverseGeolocation ', data);
         }
     };
 
@@ -120,17 +113,15 @@ searchBox.addListener('places_changed', function () {
 
 
     searchButton.addEventListener("click", function (e) {
+        e.preventDefault();
         lat = locale.geometry.location.lat();
         long = locale.geometry.location.lng();
 
-
-        e.preventDefault();
         latitude.innerText = lat.toFixed(4);
         longitude.innerText = long.toFixed(4);
         city.innerText = locale.formatted_address;
         weatherNow(lat, long);
         $('#city-search')[0].value = '';
-
 
     });
 

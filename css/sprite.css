@@ -27,7 +27,7 @@ Icon classes can be used entirely standalone. They are named after their origina
   width: 45px;
   height: 39px;
 }
-.icon-CR Alt {
+.icon-CR-Alt {
   background-image: url(sprite.png);
   background-position: -102px -40px;
   width: 44px;
@@ -45,7 +45,7 @@ Icon classes can be used entirely standalone. They are named after their origina
   width: 54px;
   height: 54px;
 }
-.icon-Fog Alt {
+.icon-Fog-Alt {
   background-image: url(sprite.png);
   background-position: -45px -98px;
   width: 44px;
