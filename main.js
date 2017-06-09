@@ -139,7 +139,7 @@ searchBox.addListener('places_changed', function () {
 function weatherNow(now) {
     var date = Math.round((new Date().getTime()) / 1000); // time now;
     $.ajax({
-        url: 'https://api.darksky.net/forecast/9099c83276a95ceebdcc6baafccf3059/' + lat + ',' + long + ',' + date + '?lang=uk&units=ca',
+        url: 'https://api.darksky.net/forecast/9099c83276a95ceebdcc6baafccf3059/' + lat + ',' + long + ',' + date + '?lang=ru&units=ca',
         method: "get", //send it through get method
         async: true,
         jsonp: "callback",
@@ -210,7 +210,7 @@ function getPrevWeather(lat, long) {
     myDate = Math.round((new Date(myDate).getTime()) / 1000); // in unix format
 
     $.ajax({
-        url: 'https://api.darksky.net/forecast/9099c83276a95ceebdcc6baafccf3059/' + lat + ',' + long + ',' + myDate + '?lang=uk&units=auto',
+        url: 'https://api.darksky.net/forecast/9099c83276a95ceebdcc6baafccf3059/' + lat + ',' + long + ',' + myDate + '?lang=ru&units=auto',
         method: "get", //send it through get method
         jsonp: "callback",
         async: true,
@@ -219,7 +219,7 @@ function getPrevWeather(lat, long) {
             withCredentials: true
         },
         success: function (response) {
-            temperatura.innerHTML = 'Максимальна температура: <br/> ' + response.daily.data[0].temperatureMax + '  &#176;<br/> Мінімальна температура:<br/>  ' + response.daily.data[0].temperatureMin + '  &#176;';
+            temperatura.innerHTML = 'Максимальная температура: <br/> ' + response.daily.data[0].temperatureMax + '  &#176;<br/> Минимальная температура:<br/>  ' + response.daily.data[0].temperatureMin + '  &#176;';
             weather.innerText = response.daily.data[0].summary;
             for (var i = 0; i < icons.length; i++) {
                 if ($('.icon').hasClass(icons[i])) {
@@ -245,7 +245,7 @@ function getNextWeather(lat, long) {
     myDate = Math.round((new Date(myDate).getTime()) / 1000); // in unix format
 
     $.ajax({
-        url: 'https://api.darksky.net/forecast/9099c83276a95ceebdcc6baafccf3059/' + lat + ',' + long + ',' + myDate + '?lang=uk&units=auto',
+        url: 'https://api.darksky.net/forecast/9099c83276a95ceebdcc6baafccf3059/' + lat + ',' + long + ',' + myDate + '?lang=ru&units=auto',
         method: "get", //send it through get method
         jsonp: "callback",
         dataType: "jsonp",
@@ -254,7 +254,7 @@ function getNextWeather(lat, long) {
         },
         success: function (response) {
             //   city.innerText  = response.timezone;
-            temperatura.innerHTML = 'Максимальна температура: <br/> ' + response.daily.data[0].temperatureMax + '  &#176;<br/> Мінімальна температура:<br/>  ' + response.daily.data[0].temperatureMin + '  &#176;';
+            temperatura.innerHTML = 'Максимальная температура: <br/> ' + response.daily.data[0].temperatureMax + '  &#176;<br/> Миніиальная температура:<br/>  ' + response.daily.data[0].temperatureMin + '  &#176;';
             weather.innerText = response.daily.data[0].summary;
             for (var i = 0; i < icons.length; i++) {
                 if ($('.icon').hasClass(icons[i])) {
