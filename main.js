@@ -17,8 +17,37 @@ var icons = ['clear-day', 'clear-night', 'rain', 'snow', 'sleet',
 var iconsClasses = ['icon-Sun', 'icon-New', 'icon-CD', 'icon-CS', 'icon-CH', 'icon-Wind', 'icon-Fog-Alt',
     'icon-CR-Alt', 'icon-CSSA', 'icon-CM'];
 
+function navGeoPosition() {
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+}
 
-function geolocation() {
+
+function geoSuccess(position) {
+    lat = (position.coords.latitude).toFixed(4);
+    long = (position.coords.longitude).toFixed(4);
+    latitude.innerText = lat;
+    longitude.innerText = long;
+    reverseGeolocation(lat, long);
+    weatherNow(lat, long);
+
+    $('.prev')[0].addEventListener("click", function () {
+        console.log(lat, long);
+        getPrevWeather(lat, long);
+    });
+    $('.post')[0].addEventListener("click", function () {
+        getNextWeather(lat, long);
+        console.log('getnex ', lat, long);
+    });
+    console.log('geoSuccess ', 'lat ', lat, 'long ', long);
+
+}
+function geoError(err) {
+    deniedGeolocation();
+    console.log('geoError ', err.message);
+}
+
+
+function deniedGeolocation() {
     $.ajax({
         url: "http://api.wunderground.com/api/99700a5f18fd6339/geolookup/q/autoip.json",
         dataType: "jsonp",
@@ -33,13 +62,13 @@ function geolocation() {
             city.innerText = cityName;
             weatherNow(lat, long);
 
-            $('.prev')[0].addEventListener("click", function(){
+            $('.prev')[0].addEventListener("click", function () {
                 console.log(lat, long);
                 getPrevWeather(lat, long);
             });
-            $('.post')[0].addEventListener("click", function(){
+            $('.post')[0].addEventListener("click", function () {
                 getNextWeather(lat, long);
-                console.log('getnex ',lat, long);
+                console.log('getnex ', lat, long);
             });
 
         },
@@ -47,11 +76,34 @@ function geolocation() {
             console.log('autoip - error', xhr.message)
         }
     });
-
 }
 
 
-// https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY
+function reverseGeolocation(lat, long) {
+
+    var xhr = new XMLHttpRequest();
+    var url = "https://maps.googleapis.com/maps/api/geocode/json";
+
+    url += "?sensor=false&latlng=" + lat + ',' + long;
+
+    xhr.open("GET", url, true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var data = JSON.parse(xhr.responseText);
+
+            cityName = data.results[3].formatted_address;
+            city.innerText = cityName;
+
+            console.log('cityName ', cityName);
+            console.log('lat, long ', lat, long);
+            console.log('reverseGeolocation ', data);
+        }
+    };
+
+    xhr.send();
+}
 
 
 // Search sity you want
@@ -77,7 +129,7 @@ searchBox.addListener('places_changed', function () {
         longitude.innerText = long.toFixed(4);
         city.innerText = locale.formatted_address;
         weatherNow(lat, long);
-        $('#city-search')[0].value ='';
+        $('#city-search')[0].value = '';
 
 
     });
@@ -221,47 +273,3 @@ function getNextWeather(lat, long) {
     });
 }
 
-
-/*
- var geocoder;
-
- function initialize() {
- geocoder = new google.maps.Geocoder();
-
-
- }
-
- function codeLatLng(lat, long) {
-
- var latlng = new google.maps.LatLng(lat, long);
- geocoder.geocode({'latLng': latlng}, function(results, status) {
- if (status == google.maps.GeocoderStatus.OK) {
- console.log('google search ', results)
- if (results[1]) {
- //formatted address
- alert(results[0].formatted_address)
- //find country name
- for (var i=0; i<results[0].address_components.length; i++) {
- for (var b=0;b<results[0].address_components[i].types.length;b++) {
-
- //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
- if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
- //this is the object you are looking for
- city= results[0].address_components[i];
- break;
- }
- }
- }
- //city data
- alert(city.short_name + " " + city.long_name)
-
-
- } else {
- alert("No results found");
- }
- } else {
- alert("Geocoder failed due to: " + status);
- }
- });
- }
- */

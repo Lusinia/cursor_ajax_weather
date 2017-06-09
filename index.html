@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Ajax - darksky.net</title>
 </head>
-<body onload="geolocation()" >
+<body onload="navGeoPosition()" >
+<div class="sky"></div>
 <div class="row">
     <div class="col-md-12">
         <div class="page-header">
@@ -47,7 +48,7 @@
     </div>
 
     <div class="col-sm-6">
-        <button   class="btn btn-success btn-lg reset" onClick="geolocation()">Погода зараз вдома</button>
+        <button   class="btn btn-success btn-lg reset" onClick="navGeoPosition()">Погода зараз вдома</button>
     </div>
     <div class="col-sm-3">
         <button type="button" class="btn btn-warning btn-lg post"  >Погода на завтра</button>

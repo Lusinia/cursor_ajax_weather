@@ -1,8 +1,6 @@
 body {
     padding: 0;
     margin: 0;
-    background: #c081b6;
-    background-size:cover;
 }
 h1 {
     color: #0367b3;
@@ -82,4 +80,87 @@ button.btn.btn-success.btn-lg.reset {
  }
 form {
     margin-bottom: 20px;
+}
+
+
+
+.sky {
+    animation: bg 60s linear infinite;
+    /*backface-visibility: hidden;*/
+    transform: translate3d(0,0,0);
+    /* Set your background with this */
+    background: #348cb2 url("../img/sky_p.jpg") bottom left;
+    background-repeat: repeat-x;
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    position: fixed;
+    top: 0;
+}
+.sky {
+    background-size: 4996px auto;
+    width: 9992px;
+}
+@-moz-keyframes bg {
+    0% {
+        -moz-transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+
+    100% {
+        -moz-transform: translate3d(-3056px,0,0);
+        -webkit-transform: translate3d(-3056px,0,0);
+        -ms-transform: translate3d(-3056px,0,0);
+        transform: translate3d(-3056px,0,0);
+    }
+}
+
+@-webkit-keyframes bg {
+    0% {
+        -moz-transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+
+    100% {
+        -moz-transform: translate3d(-3056px,0,0);
+        -webkit-transform: translate3d(-3056px,0,0);
+        -ms-transform: translate3d(-3056px,0,0);
+        transform: translate3d(-3056px,0,0);
+    }
+}
+
+@-ms-keyframes bg {
+    0% {
+        -moz-transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+
+    100% {
+        -moz-transform: translate3d(-3056px,0,0);
+        -webkit-transform: translate3d(-3056px,0,0);
+        -ms-transform: translate3d(-3056px,0,0);
+        transform: translate3d(-3056px,0,0);
+    }
+}
+
+@keyframes bg {
+    0% {
+        -moz-transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+
+    100% {
+        -moz-transform: translate3d(-3056px,0,0);
+        -webkit-transform: translate3d(-3056px,0,0);
+        -ms-transform: translate3d(-3056px,0,0);
+        transform: translate3d(-3056px,0,0);
+    }
 }
