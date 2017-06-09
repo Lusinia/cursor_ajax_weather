@@ -10,6 +10,10 @@ h1 {
     display: block;
     text-align: center;
 }
+#latitude, #longitude {
+    color:#ffc107;
+    text-shadow: 1px 1px 3px #333;
+}
 .jumbotron {
     background: #FFC107;
     border-radius: 20px;
