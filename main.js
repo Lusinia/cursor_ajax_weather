@@ -20,7 +20,7 @@ var iconsClasses = ['icon-Sun', 'icon-New', 'icon-CD', 'icon-CS', 'icon-CH', 'ic
 
 function geolocation() {
     $.ajax({
-        url: "https://api.wunderground.com/api/99700a5f18fd6339/geolookup/q/autoip.json",
+        url: "http://api.wunderground.com/api/99700a5f18fd6339/geolookup/q/autoip.json",
         dataType: "jsonp",
         async: true,
         success: function (parsed_json) {
@@ -179,7 +179,7 @@ function getPrevWeather(lat, long) {
                     $('.icon').addClass(iconsClasses[i]);
                 }
             }
-            console.log(' response prev ', response);
+            console.log(response);
         },
         error: function (xhr) {
             console.log('error getPrevWeather() ', xhr);
