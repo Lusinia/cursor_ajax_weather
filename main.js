@@ -49,7 +49,7 @@ function geoError(err) {
 
 function deniedGeolocation() {
     $.ajax({
-        url: "http://api.wunderground.com/api/99700a5f18fd6339/geolookup/q/autoip.json",
+        url: "//api.wunderground.com/api/99700a5f18fd6339/geolookup/q/autoip.json",
         dataType: "jsonp",
         async: true,
         success: function (parsed_json) {
