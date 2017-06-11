@@ -31,14 +31,12 @@ h1 {
     margin-bottom: 20px;
 }
 
-@media screen and (max-width: 768px) {
-    .btn-warning {
-        margin: 15px auto;
-        display: block;
+button.btn.btn-warning.btn-lg {
+    display: block;
+    margin: 15px auto;
 
-    }
 }
-
+ 
 .icon {
     margin-right: 10%;
     transform: scale(1.4);
@@ -104,9 +102,7 @@ form {
 
 .sky {
     animation: bg 60s linear infinite;
-    /*backface-visibility: hidden;*/
     transform: translate3d(0, 0, 0);
-    /* Set your background with this */
     background: #348cb2 url("../img/sky_p.jpg") bottom left;
     background-repeat: repeat-x;
     height: 100%;
@@ -120,6 +116,8 @@ form {
     background-size: 4996px auto;
     width: 9992px;
 }
+
+
 
 @-moz-keyframes bg {
     0% {
