@@ -248,7 +248,7 @@ function getNextWeather(lat, long) {
         },
         success: function (response) {
             console.log(response);
-            temperatura.innerHTML = 'Максимальная температура: <br/> ' + response.daily.data[0].temperatureMax + '  &#176;<br/> Миніиальная температура:<br/>  ' + response.daily.data[0].temperatureMin + '  &#176;';
+            temperatura.innerHTML = 'Максимальная температура: <br/> ' + response.daily.data[0].temperatureMax + '  &#176;<br/> Минимальная температура:<br/>  ' + response.daily.data[0].temperatureMin + '  &#176;';
             weather.innerText = response.daily.data[0].summary;
             for (var i = 0; i < icons.length; i++) {
                 if ($('.icon').hasClass(icons[i])) {
