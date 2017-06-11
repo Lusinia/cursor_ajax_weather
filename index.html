@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/libs/bootstrap.min.css">
-    <link href="./img/icons/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="./img/icons/favicon.ico" rel="icon" type="image/x-icon"/>
     <link rel="stylesheet" href="./css/sprite.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Ajax - darksky.net</title>
 </head>
-<body onload="navGeoPosition()" >
+<body onload="navGeoPosition()">
 <div class="sky"></div>
 <div class="row">
     <div class="col-md-12">
@@ -32,11 +32,11 @@
     <div class="col-sm-12">
         <div class="jumbotron">
             <div class="icon"></div>
-             <div class="info">
-                 <div class="city"></div>
-                 <div class="temp"> </div>
-                 <div class="weather"></div>
-             </div>
+            <div class="info">
+                <div class="city"></div>
+                <div class="temp"></div>
+                <div class="weather"></div>
+            </div>
 
         </div>
 
@@ -45,14 +45,14 @@
 </div>
 <div class="row buttons">
     <div class="col-sm-3">
-        <button type="button" class="btn btn-warning btn-lg prev"  >Погода вчера</button>
+        <button type="button" class="btn btn-warning btn-lg prev">Погода вчера</button>
     </div>
 
     <div class="col-sm-6">
-        <button   class="btn btn-success btn-lg reset" onClick="navGeoPosition()">Погода здесь и сейчас</button>
+        <button class="btn btn-success btn-lg reset" onClick="navGeoPosition()">Погода здесь и сейчас</button>
     </div>
     <div class="col-sm-3">
-        <button type="button" class="btn btn-warning btn-lg post"  >Погода на завтра</button>
+        <button type="button" class="btn btn-warning btn-lg post">Погода на завтра</button>
     </div>
 </div>
 <div class="row">
@@ -61,19 +61,20 @@
             <fieldset>
                 <ul>
                     <li>
-                        <label for="city-search">Введи город и жди кнопку</label>
-                        <input type="text" id="city-search" class="btn btn-default btn-lg" placeholder="e.g. Rochester, NY">
+                        <label for="city-search">Введи город и жми кнопку</label>
+                        <input type="text" id="city-search" class="btn btn-default btn-lg"
+                               placeholder="e.g. Rochester, NY">
                     </li>
                 </ul>
             </fieldset>
 
-            <button class= "btn btn-success btn-lg " id="search-button" >Узнать погоду в городе</button>
+            <button class="btn btn-success btn-lg " id="search-button">Узнать погоду в городе</button>
         </form>
     </div>
 </div>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqmZ8gKJvqP_CebwJht1YuQqsCVzED7ZE&libraries=places,geometry"></script>
- <script src='./main.js'></script>
+<script src='./main.js'></script>
 
 </body>
 </html>

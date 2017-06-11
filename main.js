@@ -31,11 +31,11 @@ function geoSuccess(position) {
     weatherNow(lat, long);
 
     $('.prev')[0].addEventListener("click", function () {
-         getPrevWeather(lat, long);
+        getPrevWeather(lat, long);
     });
     $('.post')[0].addEventListener("click", function () {
         getNextWeather(lat, long);
-     });
+    });
     console.log('geoSuccess ', 'lat ', lat, 'long ', long);
 
 }
@@ -61,11 +61,11 @@ function deniedGeolocation() {
             weatherNow(lat, long);
 
             $('.prev')[0].addEventListener("click", function () {
-                 getPrevWeather(lat, long);
+                getPrevWeather(lat, long);
             });
             $('.post')[0].addEventListener("click", function () {
                 getNextWeather(lat, long);
-             });
+            });
 
         },
         error: function (xhr) {
@@ -176,7 +176,7 @@ function formatDate(day) {
     if (mm < 10) {
         mm = '0' + mm;
     }
-    return dd + '/' + mm + '/' + yyyy
+    return yyyy  + '.' + mm + '.' + dd
 
 }
 
@@ -198,7 +198,7 @@ function addDay() {
 
 function getPrevWeather(lat, long) {
     var myDate = formatDate(awayDay()); // in format dd/mm/yyyy
-    myDate = Math.round((new Date(myDate).getTime()) / 1000); // in unix format
+    myDate = Math.round((new Date(myDate + ' 12:00:00').getTime()) / 1000); // in unix format
 
     $.ajax({
         url: 'https://api.darksky.net/forecast/9099c83276a95ceebdcc6baafccf3059/' + lat + ',' + long + ',' + myDate + '?lang=ru&units=auto',
@@ -233,7 +233,10 @@ function getPrevWeather(lat, long) {
 }
 function getNextWeather(lat, long) {
     var myDate = formatDate(addDay()); // in format dd/mm/yyyy
-    myDate = Math.round((new Date(myDate).getTime()) / 1000); // in unix format
+    console.log(myDate);
+
+    myDate =  Math.round(new Date(myDate + ' 12:00:00').getTime() / 1000); // in unix format
+    console.log(myDate);
 
     $.ajax({
         url: 'https://api.darksky.net/forecast/9099c83276a95ceebdcc6baafccf3059/' + lat + ',' + long + ',' + myDate + '?lang=ru&units=auto',
@@ -244,7 +247,7 @@ function getNextWeather(lat, long) {
             withCredentials: true
         },
         success: function (response) {
-            //   city.innerText  = response.timezone;
+            console.log(response);
             temperatura.innerHTML = 'Максимальная температура: <br/> ' + response.daily.data[0].temperatureMax + '  &#176;<br/> Миніиальная температура:<br/>  ' + response.daily.data[0].temperatureMin + '  &#176;';
             weather.innerText = response.daily.data[0].summary;
             for (var i = 0; i < icons.length; i++) {
